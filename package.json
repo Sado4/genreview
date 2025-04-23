@@ -1,0 +1,58 @@
+{
+  "name": "genreview",
+  "displayName": "Review Prompt Generator",
+  "description": "Generate AI-ready GitHub PR review prompts from git diffs.",
+  "version": "0.0.1",
+  "publisher": "Sado4",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "icon": "images/icon.png",
+  "keywords": [
+    "git",
+    "pull request",
+    "review",
+    "review prompt",
+    "ai",
+    "chatgpt",
+    "clipboard",
+    "cursor"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "genreview.generateReviewPrompt",
+        "title": "%command.generateReviewPrompt.title%"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sado4/genreview"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.99.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
