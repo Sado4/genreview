@@ -2,6 +2,13 @@
 
 All notable changes to the "genreview" extension will be documented in this file.
 
+## [0.0.11] - 2025-05-12
+
+### Changed
+
+- Changed review prompt style to analyze PR as a whole rather than per commit
+- Now encourages grouped, categorized comments for clarity
+
 ## [0.0.1] - 2025-04-23
 
 ### Added

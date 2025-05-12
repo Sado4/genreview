@@ -50,27 +50,29 @@ export async function activate(context: vscode.ExtensionContext) {
 
     const prompt = isJa
       ? `
-以下は Pull Request の差分です。レビューコメントをコード上の事実に基づいて、マークダウン形式のコードスニペットで出力してコピーできるように作成してください。
+以下は Pull Request の全体差分です。GitHub の PR 上で直接貼り付けられるよう、Markdown形式でコードレビューコメントを出力してください。
 
-- 各コミットに対して、GitHub の PR 上に貼れるような **見出し付き Markdown 形式** で出力してください
-- 以下のような観点で、指摘・提案・質問を行ってください
-  - 冗長・不要なコード、重複ロジック、命名、責務、関心の分離
-  - コメントの不足や曖昧さ、テスト不足、パフォーマンスやセキュリティの懸念
-  - 変更の意図が曖昧な箇所への質問
-- **意図や背景を推測せず、あくまで変更されたコードの事実に基づいて客観的にレビュー**してください
+- コミットごとの出力ではなく、PR全体を対象として指摘すべき点を**観点別に分類**してMarkdown形式で出力してください
+- 以下の観点で、**コード上の事実**に基づいてレビューコメントを記述してください：
+  - 冗長・不要なコード、重複ロジック、命名の不備、責務の曖昧さ、関心の分離
+  - コメントの不足や曖昧さ、テスト不足、パフォーマンスやセキュリティへの懸念
+  - 意図が不明なコードへの質問や指摘
+- **変更の背景や目的を推測せず、あくまでコードの差分に基づいて客観的にコメントしてください**
+- 各項目は箇条書きで整理し、可能であればレビュー観点ごとに見出しを設けてください
 
 ${commitSection}
 `.trim()
       : `
-Below is the diff from a Pull Request.
-Please provide **Markdown-formatted review comments** based on the actual code changes and make it copyable.
+The following is the full diff of a Pull Request. Please provide **Markdown-formatted review comments** suitable for posting directly in a GitHub PR.
 
-- Comment on each commit using a clear Markdown heading (e.g. \`### abc1234 - Summary\`)
-- Include suggestions, concerns, or questions about:
-  - Redundant or unused code, duplicated logic, naming, unclear responsibilities, separation of concerns
-  - Lack of comments, unclear logic, missing tests, performance or security issues
-  - Parts of the code where the intent is unclear — ask questions!
-- **Do not infer intent** — base your review only on what has changed in the code
+- Do **not** provide per-commit comments — instead, analyze the diff **as a whole**
+- Group your comments by category (e.g., naming, duplication, testing, etc.)
+- Focus your feedback strictly on the actual code changes. Consider:
+  - Redundant or unnecessary code, duplicated logic, unclear naming, unclear separation of concerns
+  - Missing comments or tests, unclear logic, potential performance or security issues
+  - Parts where the intention is unclear — ask questions when needed
+- **Avoid guessing the intent or purpose** — only comment on what has changed
+- Use bullet points and clear section headings per concern category
 
 ${commitSection}
 `.trim();
