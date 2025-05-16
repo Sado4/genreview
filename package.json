@@ -2,7 +2,7 @@
   "name": "genreview",
   "displayName": "Review Prompt Generator",
   "description": "Generate AI-ready GitHub PR review prompts from git diffs.",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publisher": "Sado4",
   "engines": {
     "vscode": "^1.84.0"

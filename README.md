@@ -17,6 +17,7 @@ It analyzes the Git commit diffs in your PR and generates a prompt to help LLMs 
 
 - Generates a **structured AI prompt** from your commit diffs
 - Designed for AI to **suggest GitHub-compatible review comments**
+- **Merge commits are excluded** — only actual change commits are considered
 - Copies the prompt to your clipboard — just paste it into ChatGPT or any LLM tool
 - 🗣️ **Auto-detects display language** and switches between English and Japanese
 

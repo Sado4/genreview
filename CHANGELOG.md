@@ -2,6 +2,13 @@
 
 All notable changes to the "genreview" extension will be documented in this file.
 
+## [0.0.13] - 2025-05-16
+
+### Changed
+
+- Merge commit exclusion is now applied when generating PR descriptions
+- README updated to clarify behavior
+
 ## [0.0.12] - 2025-05-16
 
 ### Changed
