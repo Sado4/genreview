@@ -2,6 +2,13 @@
 
 All notable changes to the "genreview" extension will be documented in this file.
 
+## [0.0.12] - 2025-05-16
+
+### Changed
+
+- Improve error handling for `git log` failures
+- Show detailed errors in VS Code output panel (`genreview` channel)
+
 ## [0.0.11] - 2025-05-12
 
 ### Changed

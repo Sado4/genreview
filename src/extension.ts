@@ -42,7 +42,16 @@ export async function activate(context: vscode.ExtensionContext) {
         commitBlocks.push(entry);
       }
     } catch (err) {
-      vscode.window.showErrorMessage(isJa ? "git log の取得に失敗しました。" : "Failed to get git log.");
+      const message = isJa
+        ? "git log の取得に失敗しました。詳細は出力パネルをご確認ください。"
+        : "Failed to get git log. See output panel for details.";
+
+      vscode.window.showErrorMessage(message);
+
+      const outputChannel = vscode.window.createOutputChannel("genreview");
+      outputChannel.appendLine(`[Error] git log failed:\n${(err as Error).stack}`);
+      outputChannel.show(true);
+
       return;
     }
 
