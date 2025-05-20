@@ -2,6 +2,12 @@
 
 All notable changes to the "genreview" extension will be documented in this file.
 
+## [0.0.14] - 2025-05-20
+
+### Changed
+
+- In Git diff, lines starting with `+` indicate additions, and `-` indicate deletions. Focus your review primarily on the `+` lines (added code).
+
 ## [0.0.13] - 2025-05-16
 
 ### Changed

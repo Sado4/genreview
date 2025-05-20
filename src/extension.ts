@@ -68,6 +68,7 @@ export async function activate(context: vscode.ExtensionContext) {
   - コメントの不足や曖昧さ、テスト不足、パフォーマンスやセキュリティへの懸念
   - 意図が不明なコードへの質問や指摘
 - **変更の背景や目的を推測せず、あくまでコードの差分に基づいて客観的にコメントしてください**
+- Gitのdiffにおける + が追加行、- が削除行であることに留意し、主に + の行をレビュー対象としてください
 - 各項目は箇条書きで整理し、可能であればレビュー観点ごとに見出しを設けてください
 
 ${commitSection}
@@ -82,6 +83,7 @@ The following is the full diff of a Pull Request. Please provide **Markdown-form
   - Missing comments or tests, unclear logic, potential performance or security issues
   - Parts where the intention is unclear — ask questions when needed
 - **Avoid guessing the intent or purpose** — only comment on what has changed
+- In Git diff, lines starting with + indicate additions, and - indicate deletions. Focus your review primarily on the + lines (added code).
 - Use bullet points and clear section headings per concern category
 
 ${commitSection}
